@@ -1,3 +1,0 @@
-- Randomly generated account IDs 
-- private and public lists for users
-- possibility of creating a list without an account
