@@ -9,10 +9,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./assets/css/output.css" rel="stylesheet">
-<<<<<<< HEAD
-  <link href="../dist/output.css" rel="stylesheet">
-=======
->>>>>>> 02369bbe28cc3a9c48c9bd9e50e8dc46e719db4d
   <link href="./assets/css/jquery.toast.css" rel="stylesheet">
   <title>Todo lists rocks!</title>
 </head>
