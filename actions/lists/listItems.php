@@ -20,7 +20,11 @@
                         $resp['itemID'] = $con->insert_id;
                     } else {
                         $resp['success'] = false;
+<<<<<<< HEAD
                         $resp['message'] = 'An error occurred adding item to database. ' . $con->error ;
+=======
+                        $resp['message'] = 'An error occurred adding item to database. ';
+>>>>>>> 190c9e7c026af5142b52a5bcdc53f2029dcc3bb9
                     }
 
                 } else {
