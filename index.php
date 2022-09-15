@@ -1,5 +1,7 @@
 
 <?php
+  die();
+  
   include "./db.php";
 
 ?>
