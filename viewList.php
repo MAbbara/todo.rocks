@@ -29,15 +29,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-<<<<<<< HEAD
   <link href="./assets/css/output.css" rel="stylesheet">
-=======
-  <link href="../dist/output.css" rel="stylesheet">
->>>>>>> 190c9e7c026af5142b52a5bcdc53f2029dcc3bb9
-=======
-  <link href="./assets/css/output.css" rel="stylesheet">
->>>>>>> 02369bbe28cc3a9c48c9bd9e50e8dc46e719db4d
   <link href="./assets/css/jquery.toast.css" rel="stylesheet">
   <title><?= $listName ?></title>
 
