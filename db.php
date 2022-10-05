@@ -7,6 +7,8 @@
     ini_set('log_errors', TRUE);
     ini_set('error_log', 'errors.log'); 
     ini_set('log_errors_max_len', 1024);
+
+    $timezone = "Asia/Riyadh";
     
     if (isset($_SESSION['timezone']) && !(empty($_SESSION['timezone']))){
         $timezone = $_SESSION['timezone'];
