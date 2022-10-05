@@ -86,7 +86,7 @@
       
       <form class="sm:flex flex mt-6 newListForm">
 
-        <div class=" sm:flex-auto w-56 mr-1 sm:mr-0 sm:w-64">
+        <div class=" sm:flex-auto mr-1 w-56 sm:w-64">
           <input
             required
             autocomplete="off"
@@ -94,13 +94,12 @@
             name="listName"
             id="listName"
             class="
-              sm:w-72
-              w-56
+              w-full
               px-3
               py-2
               text-base
               border border-gray-300
-              rounded
+              rounded-md
               outline-none
               focus:ring-emerald-500 focus:border-emerald-500 focus:ring-1
             "
@@ -108,7 +107,7 @@
           />
 
         </div>
-        <div class="mt-0 sm:mt-0 sm:flex-auto sm:w-44 w-36">
+        <div class="mt-0 sm:mt-0 sm:flex-auto sm:w-36 w-32">
           <button type="submit" id="createList" class=" shadow inline-flex items-center justify-center px-5 py-2 border border-transparent text-base font-medium rounded-md text-white bg-emerald-400 hover:bg-emerald-500 dark:bg-emerald-500 dark:hover:bg-emerald-600">
             Create List
           </button>

@@ -962,6 +962,10 @@ select {
   width: fit-content;
 }
 
+.w-32 {
+  width: 8rem;
+}
+
 .max-w-7xl {
   max-width: 80rem;
 }
@@ -1699,10 +1703,6 @@ select {
     margin-left: 1.5rem;
   }
 
-  .sm\:mr-0 {
-    margin-right: 0px;
-  }
-
   .sm\:mt-0 {
     margin-top: 0px;
   }
@@ -1737,6 +1737,10 @@ select {
 
   .sm\:w-1\/4 {
     width: 25%;
+  }
+
+  .sm\:w-36 {
+    width: 9rem;
   }
 
   .sm\:max-w-7xl {
