@@ -96,7 +96,7 @@
     </div>
   </nav>
   
-  <div class="container">
+  <div class="container mx-auto">
     <div class="text-left w-full sm:w-1/4 mx-auto py-8 pl-9  lg:py-12 lg:px-8 ">
         <h2 class="text-2xl font-extrabold tracking-tight text-gray-800 sm:text-3xl dark:text-white">
           <?= $listName ?>

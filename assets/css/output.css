@@ -936,6 +936,10 @@ select {
   width: 14rem;
 }
 
+.w-36 {
+  width: 9rem;
+}
+
 .w-32 {
   width: 8rem;
 }
@@ -1721,6 +1725,10 @@ select {
 
   .sm\:w-72 {
     width: 18rem;
+  }
+
+  .sm\:w-36 {
+    width: 9rem;
   }
 
   .sm\:w-32 {
