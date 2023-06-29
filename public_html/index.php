@@ -108,53 +108,6 @@
         include "../src/controllers/lists/deleteList.php";
     });
 
-    
-    
-    $router->map("GET", "/clear", function() {
-        $new = new mysqli("localhost", "root", "", "todo-rocks-migrate");
-
-        $new->query("DELETE FROM list_items");
-        $new->query("DELETE FROM lists");
-
-    });
-
-    $router->map("GET", "/migrate", function() {
-        $old = new mysqli("localhost", "root", "", "todo-rocks");
-        $new = new mysqli("localhost", "root", "", "todo-rocks-migrate");
-
-        $oldLists = $old->query("SELECT * FROM lists");
-        $oldData = $old->query("SELECT * FROM list_items");
-
-
-        echo "Migrating old lists. <br/>";
-        while ($row = $oldLists->fetch_assoc()) {
-            $row['createdOn'] = date("Y-m-d H:i:s", $row['createdOn']);
-            $row['updatedOn'] = date("Y-m-d H:i:s", $row['updatedOn']);
-
-            $stmt = $new->prepare("INSERT INTO lists (listID, listName, createdOn, updatedOn, userID, `private`) VALUES (?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("ssssii", $row['listID'], $row['listName'], $row['createdOn'], $row['updatedOn'], $row['userID'], $row['private']);
-            $stmt->execute();
-        }
-
-        echo "Migrating old Data. <br/>";
-        
-        try {
-            while ($row = $oldData->fetch_assoc()) {
-                $item = Encryption::encrypt($row['listID'], $row['item']);
-                $description = !empty($row['description']) ? Encryption::encrypt($row['listID'], $row['description']) : null;
-                $dueDate = !empty($row['dueDate']) ? date("Y-m-d", $row['dueDate']) : null;
-    
-                $stmt = $new->prepare("INSERT INTO list_items VALUES (?, ?, ?, ?, ?, ?)");
-                $stmt->bind_param("issssi", $row['itemID'], $row['listID'], $item, $description, $dueDate, $row['checked']);
-                $stmt->execute();
-            }
-        } catch (\Throwable $th) {
-            print_r($th);
-        }
-
-        echo "done.";
-
-    }); 
 
     $match = $router->match();
 
