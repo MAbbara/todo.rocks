@@ -4,6 +4,7 @@ development.bat
 development.sh
 TODO.txt
 sql/
+private_html
 private_html/
 .htpasswd/
 db.sql
