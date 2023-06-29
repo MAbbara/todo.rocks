@@ -1,0 +1,51 @@
+{% extends "base.html.twig" %}
+{% block main %}
+<div class="flex mt-8 pt-4">
+    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:py-12 lg:px-8 lg:justify-between">
+      <h2 class="text-3xl font-extrabold tracking-tight text-gray-800 sm:text-4xl dark:text-white">
+        <span class="block">Ready to dive in?</span>
+        <span class="block text-emerald-400 dark:text-emerald-500">Create your todo list now.</span>
+      </h2>
+
+      <!-- <p class="mt-2 text-l italic tracking-tight text-gray-800 sm:text-xl dark:text-slate-400">
+        some info here? help
+      </p> -->
+      
+      <form class="sm:flex flex mt-6 newListForm">
+
+        <div class=" sm:flex-auto mr-1 w-56 sm:w-64">
+          <input
+            required
+            autocomplete="off"
+            type="text"
+            name="listName"
+            id="listName"
+            class="
+              w-full
+              px-3
+              py-2
+              text-base
+              border border-gray-300
+              rounded-md
+              outline-none
+              focus:ring-emerald-500 focus:border-emerald-500 focus:ring-1
+            "
+            placeholder="Enter List Name"
+          />
+
+        </div>
+        <div class="mt-0 sm:mt-0 sm:flex-auto sm:w-36 w-32">
+          <button type="submit" id="createList" class=" shadow inline-flex items-center justify-center px-5 py-2 border border-transparent text-base font-medium rounded-md text-white bg-emerald-400 hover:bg-emerald-500 dark:bg-emerald-500 dark:hover:bg-emerald-600">
+            Create List
+          </button>
+        </div>
+      </form>
+
+
+        
+    </div>
+  </div>
+  <script type="text/javascript">
+    var csrf_token = "{{ csrf_token|raw }}";
+  </script>
+{% endblock %}

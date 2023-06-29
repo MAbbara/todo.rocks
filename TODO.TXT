@@ -1,4 +1,4 @@
 - Randomly generated account IDs 
 - Private and public lists for users
-- Possibility of creating a list without an account
-- Add site description
+- Cleaner URLs
+- Encrypted messages AES-128
