@@ -4,6 +4,10 @@ development.bat
 development.sh
 TODO.txt
 sql/
+private_html/
+.httpasswd/
+db.sql
+stats/
 
 # Logs
 logs

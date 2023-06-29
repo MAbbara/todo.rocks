@@ -108,6 +108,16 @@
         include "../src/controllers/lists/deleteList.php";
     });
 
+    
+    
+    $router->map("GET", "/clear", function() {
+        $new = new mysqli("localhost", "root", "", "todo-rocks-migrate");
+
+        $new->query("DELETE FROM list_items");
+        $new->query("DELETE FROM lists");
+
+    });
+
     $router->map("GET", "/migrate", function() {
         $old = new mysqli("localhost", "root", "", "todo-rocks");
         $new = new mysqli("localhost", "root", "", "todo-rocks-migrate");
@@ -127,15 +137,22 @@
         }
 
         echo "Migrating old Data. <br/>";
-        while ($row = $oldData->fetch_assoc()) {
-            $item = Encryption::encrypt($row['listID'], $row['item']);
-            $description = !empty($row['description']) ? Encryption::encrypt($row['listID'], $row['description']) : null;
-            $dueDate = !empty($row['dueDate']) ? date("Y-m-d", $row['dueDate']) : null;
-
-            $stmt = $new->prepare("INSERT INTO list_items VALUES (?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("issssi", $row['itemID'], $row['listID'], $item, $description, $dueDate, $row['checked']);
-            $stmt->execute();
+        
+        try {
+            while ($row = $oldData->fetch_assoc()) {
+                $item = Encryption::encrypt($row['listID'], $row['item']);
+                $description = !empty($row['description']) ? Encryption::encrypt($row['listID'], $row['description']) : null;
+                $dueDate = !empty($row['dueDate']) ? date("Y-m-d", $row['dueDate']) : null;
+    
+                $stmt = $new->prepare("INSERT INTO list_items VALUES (?, ?, ?, ?, ?, ?)");
+                $stmt->bind_param("issssi", $row['itemID'], $row['listID'], $item, $description, $dueDate, $row['checked']);
+                $stmt->execute();
+            }
+        } catch (\Throwable $th) {
+            print_r($th);
         }
+
+        echo "done.";
 
     }); 
 
