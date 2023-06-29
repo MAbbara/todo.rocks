@@ -1,4 +1,0 @@
-- Randomly generated account IDs 
-- Private and public lists for users
-- Cleaner URLs
-- Encrypted messages AES-128
