@@ -5,7 +5,7 @@ development.sh
 TODO.txt
 sql/
 private_html/
-.httpasswd/
+.htpasswd/
 db.sql
 stats/
 
