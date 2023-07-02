@@ -78,9 +78,10 @@
         include "../src/controllers/lists/viewList.php";
     }); 
 
-    $router->map("POST", "/create/[a:name]", function($name) {
+    $router->map("POST", "/create/[**:name]", function($name) {
         global $con, $base;
-
+        $name = urldecode($name);
+        
         include "../src/controllers/lists/createList.php";
     }); 
 
